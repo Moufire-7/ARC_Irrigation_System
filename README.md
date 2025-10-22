@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AquaLink - Smart Irrigation System
 
 A Flutter-based smart irrigation system monitoring and control application for IFS325/353 project at the University of the Western Cape.
@@ -165,3 +166,6 @@ This project is part of an academic assignment for IFS325/353 at UWC.
 ## Support
 
 For issues or questions, please contact the development team or refer to the project documentation.
+=======
+# ARC_Irrigation_System
+>>>>>>> 97531d99476f6913d7f187cb6ce916fac814ba4e
