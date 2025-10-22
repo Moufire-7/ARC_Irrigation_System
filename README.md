@@ -1,73 +1,167 @@
-# Welcome to your Lovable project
+# AquaLink - Smart Irrigation System
 
-## Project info
+A Flutter-based smart irrigation system monitoring and control application for IFS325/353 project at the University of the Western Cape.
 
-**URL**: https://lovable.dev/projects/051169ba-bbd9-49a6-8f61-d2d7b4517ca9
+## Features
 
-## How can I edit this code?
+- **Dashboard**: Real-time monitoring of irrigation system status
+  - Live flow rate tracking
+  - Daily water usage visualization with circular progress indicator
+  - Pump control with manual override
+  - Today's schedule preview
 
-There are several ways of editing your application.
+- **Statistics**: Water usage analytics and trends
+  - Weekly usage charts (Line and Bar charts)
+  - Efficiency metrics
+  - Irrigation events history
 
-**Use Lovable**
+- **Schedules**: Automated irrigation management
+  - Soil moisture-based automation
+  - Custom irrigation schedules
+  - Schedule frequency settings (Daily, Weekly, Custom)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/051169ba-bbd9-49a6-8f61-d2d7b4517ca9) and start prompting.
+- **Alerts**: System notifications and maintenance
+  - Low flow rate alerts
+  - Maintenance reminders
+  - Alert history tracking
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Settings**: System configuration
+  - LoRa network configuration
+  - API endpoint settings
+  - General preferences (units, theme, language)
 
-**Use your preferred IDE**
+## Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Flutter SDK** (>=3.0.0)
+- **Dart**
+- **go_router** - Navigation
+- **fl_chart** - Charts and data visualization
+- **provider** - State management
+- **fluttertoast** - Toast notifications
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Getting Started
 
-Follow these steps:
+### Prerequisites
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Flutter SDK 3.0.0 or higher
+- Dart SDK
+- Android Studio / VS Code with Flutter extensions
+- iOS: Xcode (for macOS users)
+- Android: Android SDK
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Quick Start
 
-# Step 3: Install the necessary dependencies.
-npm i
+**Easiest Way**: Just double-click one of these files:
+- 🖥️ **`run_app_windows.bat`** - Run on Windows Desktop (fastest for testing)
+- 📱 **`run_app_android.bat`** - Run on Android device
+- ⚡ **`run_app.bat`** - Run on default device
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Manual Setup
+
+1. Install dependencies:
+```bash
+flutter pub get
 ```
 
-**Edit a file directly in GitHub**
+2. Run the app:
+```bash
+# IMPORTANT: Make sure you're in the aqua-link-grow-smart folder!
+cd "C:\Users\Sange\New Aqualink\aqua-link-grow-smart"
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Run on Windows Desktop
+flutter run -d windows
 
-**Use GitHub Codespaces**
+# Or on Android
+flutter run -d android
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Or on Chrome
+flutter run -d chrome
+```
 
-## What technologies are used for this project?
+### Build for Production
 
-This project is built with:
+```bash
+# Make sure you're in the project folder first!
+cd "C:\Users\Sange\New Aqualink\aqua-link-grow-smart"
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Android APK
+flutter build apk
 
-## How can I deploy this project?
+# Android App Bundle
+flutter build appbundle
 
-Simply open [Lovable](https://lovable.dev/projects/051169ba-bbd9-49a6-8f61-d2d7b4517ca9) and click on Share -> Publish.
+# Web
+flutter build web
+```
 
-## Can I connect a custom domain to my Lovable project?
+## Project Structure
 
-Yes, you can!
+```
+lib/
+├── main.dart                 # App entry point
+├── pages/                    # App pages/screens
+│   ├── dashboard_page.dart
+│   ├── statistics_page.dart
+│   ├── schedules_page.dart
+│   ├── alerts_page.dart
+│   ├── settings_page.dart
+│   └── not_found_page.dart
+├── widgets/                  # Reusable widgets
+│   ├── layout.dart
+│   ├── circular_progress.dart
+│   └── stat_card.dart
+└── theme/                    # App theming
+    └── app_theme.dart
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+public/                       # Static assets
+├── favicon.ico
+├── placeholder.svg
+└── robots.txt
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Configuration
+
+### LoRa Network
+- Frequency: 433 MHz (configurable)
+- Spreading Factor: SF7-SF10
+- Network ID: Configurable in Settings
+
+### API Integration
+Configure the API endpoint in Settings:
+- API URL: `https://api.irrigation.uwc.ac.za`
+- API Key: Your API key
+- Sync Interval: 15 minutes (default)
+
+## Features Overview
+
+### Real-time Monitoring
+The dashboard provides real-time updates of:
+- Current flow rate (L/min)
+- Total water usage (liters)
+- Pump status (Active/Inactive)
+- System health status
+
+### Automated Irrigation
+- Soil moisture-based automation (connects to Group 2 sensor)
+- Customizable irrigation schedules
+- Multiple schedule support with individual controls
+
+### Data Visualization
+- Weekly water usage trends (Line chart)
+- Scheduled vs Actual comparison (Bar chart)
+- Circular progress indicators for daily goals
+- Historical irrigation events table
+
+## Team
+
+**IFS325/353 Group 1**  
+University of the Western Cape  
+2025
+
+## License
+
+This project is part of an academic assignment for IFS325/353 at UWC.
+
+## Support
+
+For issues or questions, please contact the development team or refer to the project documentation.
